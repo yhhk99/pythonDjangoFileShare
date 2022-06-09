@@ -1,0 +1,49 @@
+wampserver3.2.0_x64
+android-studio-ide-193.6626763-windows
+VMware-workstation-full-10.0.3-1895310
+WinZip中文版
+texlive2020
+
+
+
+
+E:\Program Files
+Android			Android studio
+BaiduNetdisk		百度网盘
+Baofeng			暴风视频
+Cs1.6中文版
+DsDemo	数据结构演示文件
+eclipse			for php
+Git	
+httprequester
+java			jdk安装文件夹
+JetBrains			phpStome
+Kawaks 1.65		合金弹头
+Mozilla Firefox		文件夹的形式，不用安装
+Office_Visio_Pro_2007	
+
+texlive			一种期刊编辑软件
+Thunder Network		迅雷下载
+UltraISO			软碟通，制作启动盘
+
+WeChat			微信
+WinZip
+Wireshark
+XMind 8 Update 7
+
+
+E:\Program Files (x86)
+Adobe Photoshop CC2018
+BaofengVideo
+Bochs-2.6.9		操作系统编辑器
+CoreServices		IEtest
+EditPlus			文本编辑器
+Microsoft Office
+Microsoft Visual Studio
+Netease			网易云
+Tecent
+TTKN			caj阅读器
+VMware			虚拟机，运行虚拟系统
+梦幻西游
+
+

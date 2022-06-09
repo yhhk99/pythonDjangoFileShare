@@ -1,0 +1,420 @@
+/* Custom font */
+@font-face {
+    font-family: Comfortaa;
+    src: url("fonts/Comfortaa-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: Comfortaa;
+    src: url("fonts/Comfortaa-Bold.ttf") format('truetype');
+    font-weight: bold;
+}
+
+* {
+    /* font-family: sans-serif; */
+    font-family: Comfortaa;
+}
+
+
+body {
+    background-image: url("triangles.png");
+    background-size: initial;
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.main-container {
+    height: 100%;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.6);
+
+    /* Center the box */
+    transform: translate(-50%, -50%);
+    margin-top: 25%;
+    margin-left: 50%;
+    position: absolute;
+
+    /* Make it prettier */
+    border-radius: 6px;
+    /* padding: 40px; */
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-first-container {
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+    padding: 1.5px;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-first-container-content {
+    width: 80%;
+    height: 50px;
+
+    margin-top: 15px;
+    margin-right: 10%;
+    margin-left: 10%;
+
+    text-align: center;
+    padding: 0 10px;
+}
+
+.search-first-container-content-text {
+    height: 40px;
+    width: 400px;
+
+    font-size: 17px;
+    color: #777;
+
+    border-radius: 5px;
+    /*border: 0;*/ /* 0 表示去除边框*/
+    outline: none;
+    padding: 0 0 0 10px; /*这里的作用是让文字显示更美观，具体语句含义是：缩进10px*/
+
+    border: 1px solid #b4b4b4;
+    /*border-right-width: 2;*/
+    letter-spacing: 2px; /*文字间隔2px*/
+}
+
+.search-first-btn {
+    /*display: block;*/
+    height: 40px;
+    width: 75px;
+    padding: 0;
+    border: none; /*去除边框好像是*/
+
+    letter-spacing: 3px;
+    font-size: 14px;
+    font-family: 微软雅黑;
+
+    background: #FB7C80;
+    color: #fff; /* 设置文字颜色，这里应该是白色*/
+    outline: none;
+    -moz-border-radius: 0px 4px 4px 0px;
+    -webkit-border-radius: 0px 4px 4px 0px;
+    border-radius: 3px 4px 4px 0px;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
+}
+
+.search-first-container-content-btn-upload {
+    background: #29BC95;
+}
+
+.search-second-container {
+    height: 50%; /* 控制container的高度*/
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+
+    /*!*!* Center the box *!*!*/
+    margin-top: 5px;
+
+    /*!*!* Make it prettier *!*!*/
+    border-radius: 6px;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-sec-sec-container {
+    height: 60px; /* 控制container的高度*/
+    width: 100%;
+    margin-top: 5px;
+
+    /*!*!* Make it prettier *!*!*/
+    border-radius: 6px;
+}
+
+.search-second-btn {
+    width: 140px;
+    margin-top: 10px;
+}
+.search-sec-btn{
+    width: 100px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /*border:none;*/
+    color: #eef3f2;
+    background-color: #FB7C80;
+}
+.search-second-show-list {
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+    padding: 1.5px;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-sec-file-title {
+    /*float: left;*/
+    /*padding: 10px;*/
+    margin: 5px;
+    border-radius: 6px;
+    /*background-color: rgba(255, 255, 07, 0.7);*/
+    font-weight: bold;
+}
+
+.search-sec-ft-item-begin {
+    float: left;
+    padding: 10px;
+    /*margin: 5px;*/
+    margin-top: 5px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 6px;
+    /*background-color: rgba(255, 255, 7, 0.7);*/
+    font-weight: bold;
+    /*position: absolute;*/
+    /* Needed for centering the main list */
+    display: inline-table;
+}
+
+.search-sec-ft-file_size {
+    float: left;
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 6px;
+    /*background-color: rgba(255, 255, 255, 0.7);*/
+    font-weight: bold;
+    /* Needed for centering the main list */
+    display: inline-table;
+}
+
+.search-sec-ft-item-mid {
+    float: left;
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 6px;
+    /*background-color: rgba(255, 255, 255, 0.7);*/
+    font-weight: bold;
+    /* Needed for centering the main list */
+    display: inline-table;
+}
+
+.search-sec-ft-item-end {
+    float: left;
+    padding: 10px;
+    /*margin: 5px;*/
+    margin-top: 5px;
+    margin-left: 10%;
+    margin-right: 5%;
+    border-radius: 6px;
+    /*background-color: rgba(255, 255, 7, 0.7);*/
+    font-weight: bold;
+    /* Needed for centering the main list */
+    display: inline-table;
+}
+
+.search-third-container {
+    height: 30%; /* 控制container的长度*/
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+
+    /*!*!* Center the box *!*!*/
+    margin-top: 5px;
+
+    /*!*!* Make it prettier *!*!*/
+    border-radius: 6px;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.searchindex {
+    margin-top: 1.5%;
+    margin-right: auto;
+    font-size: 25px;
+    text-align: center;
+}
+
+.searchinput {
+    /*font-weight: ;*/
+    margin-left: 25%;
+    margin-right: 1%;
+    margin-top: 1.5%;
+    font-size: 30pt;
+    color: #333333;
+    align-content: center;
+    vertical-align: center;
+    border: 5px;
+    border-radius: 10px;
+}
+
+
+.searchheader {
+    background-color: rgba(255, 255, 255, 0.7);
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 90px;
+    border-radius: 6px 6px 0px 0px;
+}
+
+
+.header {
+    background-color: rgba(255, 255, 255, 0.7);
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 90px;
+    border-radius: 6px 6px 0px 0px;
+}
+
+
+h1 {
+    font-weight: bold;
+    font-size: 30pt;
+    color: #333333;
+    text-align: center;
+    vertical-align: center;
+}
+
+h2 {
+    color: #333333;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    vertical-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.mainlist {
+    /* Center the list horizontally */
+    transform: translate(-50%, -50%);
+    /* padding: 20px; */
+    left: 50%;
+    position: absolute;
+    top: 237px;
+    /* Needed so its width is equal to the total of its children's width */
+    display: inline-flex;
+}
+
+.category {
+    float: left;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+    /* Needed for centering the main list */
+    display: inline-table;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:link, a:visited {
+    color: #333333;
+}
+
+a:hover {
+    color: #B4486C;
+    transition: .5s;
+}
+
+li {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+    text-align: center;
+    vertical-align: center;
+    border-left: 4px solid rgba(255, 255, 255, 0.7);
+    border-right: 4px solid rgba(255, 255, 255, 0.7);
+}
+
+li:hover {
+    color: #B4486C;
+    background-color: #FFFFFF;
+    border-left: 4px solid #FB7C80;
+    transition: .5s;
+}
+
+table {
+    /*border-collapse: collapse;*/
+    /*margin: 0 auto;*/
+    /*text-align: center;*/
+    margin-top: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+    /*border:1px solid #cad9ea;*/
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+
+.content > h2 {
+    color: #666;
+    letter-spacing: 2px;
+}
+
+
+.search-text:hover {
+    border: 1px solid #888;
+    border-right-width: 0;
+}
+
+.search-text:focus {
+    border: 1px solid #2DD1AF;
+    border-right-width: 0;
+}
+
+
+.search-btn:hover {
+    background: #29BC95;
+}
+
+#search-suggest {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    margin-left: -190px;
+    margin-top: 70px;
+    display: none;
+    background: #fff;
+
+}
+
+#search-suggest ul {
+    list-style: none;
+    width: 318px;
+    border: 1px solid #b4b4b4;
+    padding: 0;
+    margin: 0;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+#search-suggest ul li {
+    padding: 3px 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#search-suggest ul li:hover {
+    background: #eee;
+
+}

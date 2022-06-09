@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+{% include 'base/base.html' %}
+{% block content %}
+    <div class="main-container">
+    <div class="search-first-container">
+        <form class="search-first-container-content" id="search" action="{# % url "search"% " method="get">#}">
+            {% csrf_token %}
+            <input class="search-first-container-content-text" id="files-info" name="kw" type="text"
+                   placeholder="请输入文件信息" maxlength="50" autocomplete="off">
+            <input class="search-first-btn" type="button" value="搜索">
+
+        </form>
+    </div>
+    <div class="search-second-container">
+
+        <div class="search-sec-sec-container">
+            <!-- 上传文件 -->
+            <form class="search-first-container-content" id="form" action="/" method="post" runat="server"
+                  enctype="multipart/form-data">
+                {% csrf_token %}
+                <input id="choose_files_info" type="file" name="choose_files_info"/>
+                <input class="search-first-btn search-second-btn" id="bt" type="submit" value="Choose File"/>
+            </form>
+        </div>
+        <!-- show_server_list -->
+        <table>
+            <thead>
+                <td>
+                    <th width="250px">文件名</th>
+                    <th width="100px">文件大小</th>
+                    <th width="100px">访问次数</th>
+                    <th width="200px">日期</th>
+                    <th width="300px">文件链接</th>
+                    <th width="100px">操作</th>
+                </td>
+            </thead>
+
+
+                <div class="search-sec-file-title">
+                <tbody>
+                                {% for i in content %}
+                    <td class="text-c">
+                        <th width="250px">{{ i.file_name }}</th>
+                        <th width="100px">{{ i.file_size }}</th>
+                        <th width="100px">{{ i.download_count }}</th>
+                        <th width="200px">{{ i.file_upload_time }}</th>
+                        <th width=300px"><span>https://{{ host }}/s/{{ i.code }}</span><th>
+                        <th width="100px">
+                             <a href="/{{ i.path|cut:'djangoFileShareSystem/' }}" style="color:#ff3e3e;"
+                               download="{{ i.file_name }}"><button>Download</button>
+                            </a>
+                        </th>
+                    </td>
+                                {% endfor %}
+
+                </tbody>
+                </div>
+
+        </table>
+    </div>
+
+
+
+    <div class="search-third-container">
+        {#        test print#}
+    </div>
+
+    {% include 'base/footer.html' %}
+{% endblock content %}
+
+

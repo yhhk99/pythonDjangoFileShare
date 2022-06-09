@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="stylesheet" href={% static 'style/styles.css' %}>
+    <meta charset="UTF-8">
+
+    <title>serchInput</title>
+</head>
+<body>
+<form class="content">
+    <h2>前端搜索框效果制作</h2>
+    <input class="search-text" id="search-text" type="text" placeholder="请输入搜索内容" maxlength="50">
+    <input type="button" class="search-btn" value="搜索">
+</form>
+
+<div class="suggest" id="search-suggest">
+    <ul>
+        <li>动态AJAX数据1</li>
+        <li>动态AJAX数据2</li>
+        <li>动态AJAX数据3</li>
+        <li>动态AJAX数据4</li>
+    </ul>
+</div>
+<script>
+    var oSearchText = document.getElementById('search-text');
+    var oSearchSuggest = document.getElementById('search-suggest');
+
+    document.addEventListener('keyup', function (e) {
+        e = e || event;
+
+        if (e.target.tagName.toLowerCase() == 'input') {
+
+            if (oSearchText.value.length) {
+
+                oSearchSuggest.style.display = 'block';
+            } else {
+
+                oSearchSuggest.style.display = 'none';
+            }
+        }
+    });
+
+    document.addEventListener('click', function (e) {
+        e = e || event;
+
+        if (oSearchText.value.length) {
+
+            if (e.target.tagName.toLowerCase() != 'input') {
+
+                oSearchSuggest.style.display = 'none';
+            } else {
+
+                oSearchSuggest.style.display = 'block';
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

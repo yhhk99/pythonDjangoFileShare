@@ -1,0 +1,80 @@
+{% load static %}
+{#{% load svg %}#}
+<header>
+  <a href="/" class="logo-a" title="Share N Learn">
+{#    {% svg "logo" %}#}
+  </a>
+  <nav>
+    <ul class="nav-list">
+      {% if request.user.is_authenticated %}
+      {% if request.user.is_superuser  %}
+      <li>
+        <a href="{% url "superadmin_dashboard" 'basic' %}">Manage Users</a>
+      </li>
+      {% endif %}
+      {% if request.user.is_superuser or request.user.is_staff %}
+      <li>
+        <a href="{% url "admin_dashboard" 'open' %}">Dashboard</a>
+      </li>
+      <li>
+        <a href="{% url "viewall_usernotes" %}">Accepted Notes</a>
+      </li>
+      {% else %}
+      <li>
+        <a href="{% url 'upload_notes' %}">Upload New</a>
+      </li>
+      <li>
+        <a href="{% url 'view_usernotes' 'open' %}">My Uploads</a>
+      </li>
+      <li>
+        <a href="{% url "viewall_usernotes" %}">All Uploads</a>
+      </li>
+      {% endif %}
+      {% else %}
+      <li>
+        <a href="/#home">主页</a>
+      </li>
+      <li>
+        <a href="/#about">关于</a>
+      </li>
+      <li>
+{#        <a href="/#contact">Contact</a>#}
+      </li>
+      {% endif %}
+      <li class="theme-item">
+        <p>Appearance</p>
+        <div class="theme-switcher">
+          <button class="switch">
+            <img src="{% static 'images/icon-moon.svg' %}" alt="change theme" />
+          </button>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  {% if request.user.is_authenticated %}
+  <a href="#" class="button auth-log" id="logout-btn">Logout</a>
+  {% else %}
+  <div class="n-users">
+{#    <a href="{% url 'signup' %}" class="button auth-log" style="margin-right: 0.5rem">Sign Up</a>#}
+          <a href="###" class="button auth-log" style="margin-right: 0.5rem">Sign Up</a>
+    <a href="###" class="button auth-log">Login</a>
+  </div>
+  {% endif %}
+  <button class="nav-btn" title="Open Menu">
+{#    {% svg "icon-hamburger" %}#}
+  </button>
+  <div class="theme-switcher desktop">
+    <button class="switch">
+      <img src="{% static 'images/icon-moon.svg' %}" alt="change theme" />
+    </button>
+  </div>
+  <div class="alert-box">
+    <h2>Log Out</h2>
+    <p>Are you sure you want to logout?</p>
+    <div class="alert-box-action">
+      <button class="button" id="cancel-logout">Cancel</button>
+      <button class="button dang" id="confirm-logout">Logout</button>
+    </div>
+  </div>
+  <div class="win"></div>
+</header>

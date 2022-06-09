@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+{% include 'base/base.html' %}
+{% block content %}
+<div class="main-container">
+    <div class="search-first-container">
+        <form class="search-first-container-content" id="search" action="{# % url "search"% " method="get">#}">
+            {% csrf_token %}
+            <input class="search-first-container-content-text" id="files-info" name="kw" type="text"
+                   placeholder="请输入文件信息" maxlength="50" autocomplete="off">
+            <input class="search-first-btn" type="button" value="搜索">
+
+        </form>
+    </div>
+    <div class="search-second-container">
+
+        <div class="search-sec-sec-container">
+        <!-- 上传文件 -->
+            <form class="search-first-container-content" id="form" action="/" method="post" runat="server"
+                  enctype="multipart/form-data">
+                {% csrf_token %}
+                <input id="choose_files_info" type="file" name="choose_files_info" multiple="multiple" style="display: none;"/>
+                <input class="search-first-btn search-second-btn" id="bt" type="button" value="Choose File"/>
+            </form>
+        </div>
+        <!-- show_server_list -->
+        <div class="search-second-show-list">
+            <div class="search-sec-file-title">
+                <div class="search-sec-ft-item-begin">文件名</div>
+                <div class="search-sec-ft-item-mid">文件大小</div>
+                <div class="search-sec-ft-item-mid">访问</div>
+                <div class="search-sec-ft-item-mid">日期</div>
+                <div class="search-sec-ft-item-end">文件链接</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="search-third-container">
+        test print
+    </div>
+
+    {% include 'base/footer.html' %}
+    {% endblock content %}
+
+
